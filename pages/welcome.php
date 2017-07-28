@@ -4,10 +4,6 @@
 if($_SESSION['logged_in']){
 //Instantiate Database object
 
-
-
-
- 
 $database = new Database;
  
 //Get logged in user
