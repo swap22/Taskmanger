@@ -14,3 +14,15 @@ $database->query('SELECT * FROM lists WHERE list_user=:list_user');
 $database->bind(':list_user',$list_user);
 $rows = $database->resultset();
  
+foreach($rows as $list){
+	echo '<li><a href="?page=list&id='.$list['id'].'">'.$list['list_name'].'</a></li>';
+}
+	echo '</ul>';
+} else {
+	echo 'There are no lists available -<a href="index.php?page=new_list">Create One Now</a>';
+}	
+} else {
+	echo "<p>myTasks is a small but helpful application where you can create and manage tasks to make your life easier. 
+Just register and login and you can start adding tasks";
+}
+?>
