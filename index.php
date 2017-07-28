@@ -1,3 +1,17 @@
+<?php
+//Start Session
+session_start();
+//Config File
+require 'config.php';
+//Database Class
+require 'classes/database.php';
+ 
+$database = new Database;
+ 
+//Set Timezone
+//date_default_timezone_set('America/New_York');
+?>
+
 <!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
