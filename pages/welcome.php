@@ -3,7 +3,7 @@
 <?php
 if($_SESSION['logged_in']){
 //Instantiate Database object
-
+ 
 $database = new Database;
  
 //Get logged in user
@@ -14,6 +14,9 @@ $database->query('SELECT * FROM lists WHERE list_user=:list_user');
 $database->bind(':list_user',$list_user);
 $rows = $database->resultset();
  
+echo '<h4>Here are your current lists</h4><br />';
+if($rows){
+echo '<ul class="items">';
 foreach($rows as $list){
 	echo '<li><a href="?page=list&id='.$list['id'].'">'.$list['list_name'].'</a></li>';
 }
