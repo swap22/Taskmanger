@@ -1,4 +1,4 @@
-<h1>Welcome to myToDo!</h1>
+<h1>Welcome to Task manager!</h1>
  
 <?php
 if($_SESSION['logged_in']){
