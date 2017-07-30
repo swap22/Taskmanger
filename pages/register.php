@@ -84,7 +84,15 @@
  
 <h3>Register</h3>
 <p>Please use the form below to register at our site</p>
-
+<?php
+if(!empty($errors)){
+	echo "<ul>";
+ 	foreach($errors as $error){
+		echo "<li class=\"error\">".$error."</li>";
+	}
+	echo "</ul>";
+}
+?>
  <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
  				<label>First Name: </label>
                 <input type="text" name="first_name" value="<?php if($_POST['first_name'])echo $_POST['first_name'] ?>" /><br />
