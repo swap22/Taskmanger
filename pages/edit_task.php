@@ -1,4 +1,28 @@
-
+<?php
+	if($_POST['submit']){
+		$task_id = $_GET['id'];
+		$task_name = $_POST['task_name'];
+		$task_body = $_POST['task_body'];
+		$due_date = $_POST['due_date'];
+		$list_id = $_POST['list_id'];
+		$is_complete = $_POST['is_complete'];
+		
+		//Instantiate Database object
+		$database = new Database;
+		
+		$database->query('UPDATE tasks SET task_name=:task_name,task_body=:task_body,due_date=:due_date,list_id=:list_id,is_complete=:is_complete WHERE id=:id');
+		$database->bind(':task_name',$task_name);
+		$database->bind(':task_body',$task_body);
+		$database->bind(':due_date',$due_date);
+		$database->bind(':list_id',$list_id);
+		$database->bind(':id',$task_id);
+		$database->bind(':is_complete',$is_complete);
+		$database->execute();
+		if($database->rowCount()){
+			echo '<p class="msg">Your task has been updated</p>';
+		}
+	}
+?>
  
 <h1>Edit Task</h1>
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
