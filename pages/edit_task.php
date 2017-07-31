@@ -23,6 +23,13 @@
 		}
 	}
 ?>
+<?php
+//Instantiate Database object
+$database = new Database;
+//Query
+$database->query('SELECT * FROM lists');
+$rows = $database->resultset();
+?>
  
 <h1>Edit Task</h1>
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
