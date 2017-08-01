@@ -1,4 +1,13 @@
-
+<?php
+ 
+	if($_POST['submit']){
+		$list_name = $_POST['list_name'];
+		$list_body = $_POST['list_body'];
+		$list_user = $_SESSION['username'];
+ 
+		
+?>
+ 
  
  
 <h1>Add a List</h1>
