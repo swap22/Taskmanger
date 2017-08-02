@@ -21,6 +21,20 @@
 	}
  
 ?>
+
+<?php
+//Instantiate Database object
+$database = new Database;
+ 
+//Get logged in user
+$list_user = $_SESSION['username'];
+ 
+//Query
+$database->query('SELECT * FROM lists WHERE list_user = :list_user');
+$database->bind(':list_user',$list_user);
+$rows = $database->resultset();
+?>
+ 
  
 <h1>Add a Task</h1>
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
