@@ -8,7 +8,7 @@
 		$database->bind(':id',$list_id);
 		//Execute
 		$database->execute();
+ 
 		if($database->rowCount() > 0){
 			header("Location:index.php?msg=listdeleted");
         }
-?>
