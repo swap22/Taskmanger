@@ -20,6 +20,8 @@
 		}
 	}
 ?>
+ 
+ 
 <h1>Add a List</h1>
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
 	<label>List Name</label>
