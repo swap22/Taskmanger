@@ -21,7 +21,7 @@
 	}
  
 ?>
-
+ 
 <?php
 //Instantiate Database object
 $database = new Database;
