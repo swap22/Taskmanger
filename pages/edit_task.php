@@ -31,6 +31,17 @@ $database->query('SELECT * FROM lists');
 $rows = $database->resultset();
 ?>
  
+<?php
+$task_id = $_GET['id'];
+ 
+//Instantiate Database object
+$database = new Database;
+//Query
+$database->query('SELECT * FROM tasks WHERE id = :id');
+$database->bind(':id',$task_id);
+$row = $database->single();
+?>
+ 
 <h1>Edit Task</h1>
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
 	<label>Task Name</label><br />
